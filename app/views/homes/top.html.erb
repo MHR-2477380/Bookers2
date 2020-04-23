@@ -1,13 +1,18 @@
-<div class="body">
+
 	<div class="container">
 		<p id="notice"><%= flash[:notice] %></p>
 		<div class="row">
 			<div class="top-message col-md-offset-3 col-md-6">
-				<h1>welcome to
-					<span class="glyphicon glyphicon-book"><strong>Bookers</strong>
-						!!
-					</span>
+				<h1>
+					welcome to
+
+					<span class="glyphicon glyphicon-book"><strong>Bookers</strong> !!</span>
+
 				</h1>
+
+				<br>
+				<br>
+
 				<p>
 					In
 					<span class="glyphicon glyphicon-book"></span>
@@ -18,19 +23,24 @@
 					inpressions , and emotions
 				</p>
 				<p> about various book! </p>
+
+				<br>
+				<br>
+
 				<div class="btn-wrapper">
+
 					<div class="row">
 						<p>
-							<%= link_to "Log in", new_user_session_path, class: 'btn btn-info col-xs-10 col-xs-offset-1' %>
+							<%= link_to "Log in", new_user_session_path, class: 'btn btn-info col-xs-10' %>
 						</p>
 					</div>
 				    <div class="row">
 				    	<p>
-				    	    <%= link_to "sign up", new_user_registration_path, class:'btn btn-success col-xs-10 col-xs-offset-1' %>
+				    	    <%= link_to "sign up", new_user_registration_path, class: 'btn btn-success col-xs-10' %>
 				    	</p>
 				    </div>
 				</div>
+
 			</div>
 		</div>
 	</div>
-</div>
