@@ -1,9 +1,9 @@
 <div class="container">
-	<% if @post.errors.any? %>
+	<% if @book.errors.any? %>
     <div id="error_explanation">
       <h4>【 error 】</h4>
 	    <ul>
-		  <% @post.errors.full_messages.each do |message| %>
+		  <% @book.errors.full_messages.each do |message| %>
 		    <li><%= message %></li>
 		    <% end %>
 		</ul>
@@ -13,7 +13,7 @@
     <div class="col-md-6 col-md-offset-3">
 	  <h1>Editing Book</h1>
 	    <br>
-		<%= form_for(@post) do |f| %>
+		<%= form_for(@book) do |f| %>
 	      <div class="field">
 		    <label for="book_title">Title</label>
 			  <br>
@@ -37,7 +37,7 @@
       <br>
 	    <br>
 		<br>
-	    <%= link_to"Show", book_path(@post) %>
+	    <%= link_to"Show", book_path(@book) %>
 	        |
 	    <%= link_to"Back", books_path %>
 	</div>
