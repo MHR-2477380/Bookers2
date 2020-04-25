@@ -1,39 +1,50 @@
 <div class="container">
-  <p id="notice"><%= flash[:notice] %></p>
-	  <div class="row">
+
+	<p id="notice"><%= flash[:notice] %></p>
+
+	<div class="row">
+
 		<div class="col-xs-3">
+			<!-- 部分テンプレ-->
+			<%= render 'books/book', newbook: @newbook %>
+		</div>
 
-			<%= render 'books/book', newbook: @newbook %> <!-- 部分テンプレ-->
+		<div class="col-xs-9">
 
-	        </div>
+			<h2>Book detail</h2>
 
-	        <div class="col-xs-9">
-	        <h2>Book detail</h2>
-		    <table class="table table-hover table-inverse">
-	            <tbody>
-	     	      <tr>
-	     	        <td class="text-center">
-	     	    	  <%= link_to user_path(@book.user) do %>
-	     	    	    <%= attachment_image_tag @book.user, :profile_image, :fill, 40, 40, format: 'jpeg', fallback: "no_image.jpg", size: '40x40' %>
-	     	    	      <br>
-	     	    	      <%= @book.user.name %>
-	     	    	  <% end %>
-	     	        </td>
-	     	        <td class="text-center"><%= @book.title %></td>
-	     	        <td class="text-center"><%= @book.body %></td>
-	     	        <td class="text-center">
-	     	        	<% if @book.user == current_user %>
-	     	        	<%= link_to "Edit", edit_book_path(@book), class:"btn btn-success" %>
-	     	        	<% end %>
-	     	        </td>
-	     	        <td class="text-center">
-                        <% if @book.user == current_user %>
-	     	        	<%= link_to "Destroy", book_path(@book), method: :delete, "data-confirm" => "Are you sure?", class:"btn btn-danger" %>
-	     	            <% end %>
-	     	        </td>
-	              </tr>
-	            </tbody>
-	          </table>
-            </div>
-          </div>
-      </div>
+			<table class="table table-hover table-inverse">
+				<tbody>
+					<tr>
+
+						<td class="text-center">
+							<%= link_to user_path(@book.user) do %>
+								<%= attachment_image_tag @book.user, :profile_image, :fill, 40, 40, format: 'jpeg', fallback: "no_image.jpg", size: '40x40' %><br>
+								<%= @book.user.name %>
+							<% end %>
+						</td>
+
+						<td class="text-center"><%= @book.title %></td>
+
+						<td class="text-center"><%= @book.body %></td>
+
+						<td class="text-center">
+							<% if @book.user == current_user %>
+								<%= link_to "Edit", edit_book_path(@book), class:"btn btn-success" %>
+							<% end %>
+						</td>
+
+						<td class="text-center">
+							<% if @book.user == current_user %>
+								<%= link_to "Destroy", book_path(@book), method: :delete, "data-confirm" => "Are you sure?", class:"btn btn-danger" %>
+							<% end %>
+						</td>
+
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+	</div>
+
+</div>
