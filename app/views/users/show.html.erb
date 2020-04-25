@@ -2,23 +2,23 @@
 
 	<div class="row">
 
-		<p id="notice"><%= flash[:notice] %></p>
-
 		<div class="col-xs-3">
 			<!-- 部分テンプレ -->
-			<%= render 'users/user', book: @book %>
+			<%= render 'users/side', book: @book, user: @user %>
 		</div>
 
 		<div class="col-xs-9">
+
+			<p id="notice"><%= flash[:notice] %></p>
 
 			<h2>Books</h2>
 
 			<table class="table">
 				<thead>
 					<tr>
-						<th></th>
-						<th>Title</th>
-						<th>Opinion</th>
+						<th> image</th>
+						<th> Title</th>
+						<th> Opinion</th>
 						<th  colspan="3"></th>
 					</tr>
 				</thead>

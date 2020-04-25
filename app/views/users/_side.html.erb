@@ -18,7 +18,9 @@
 
 <div>
 	<!-- ユーザー情報編集画面へのリンクボタン -->
-	<%= link_to "" ,edit_user_path(current_user), class:'col-xs-12 btn btn-default glyphicon glyphicon-wrench'%>
+	<% if @user == current_user %>
+		<%= link_to "" ,edit_user_path(current_user), class:'col-xs-12 btn btn-default glyphicon glyphicon-wrench'%>
+	<% end %>
 </div>
 
 
